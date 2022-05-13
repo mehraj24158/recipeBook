@@ -9,6 +9,10 @@ const recipeSchema = mongoose.Schema
             type: String,
             required: true,
         },
+        author: {
+            type: String,
+            required: true,
+        },
 
         ingredients: {
             type: String,

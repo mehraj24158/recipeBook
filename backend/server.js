@@ -17,9 +17,12 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, })
 
 app.use(morgan('dev'));
 
+app.use('/recipes', require('./routes/recipeRoutes'));
+
+
 app.get('/', (req, res) => {
   res.redirect('/recipes')
-})
+});
 
 app.get('/recipes',  (req, res) => {
   res.status(200).json({recipe: "this is an example recipe"})
@@ -27,6 +30,10 @@ app.get('/recipes',  (req, res) => {
 
 app.post('/recipes/create', () => {
   res.json({create:"this is the create recipe page"}) 
+});
+
+app.delete('/recipes/delete', () => {
+
 });
 
 
